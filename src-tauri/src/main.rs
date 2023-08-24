@@ -9,7 +9,10 @@ fn greet(name: &str) -> String {
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![
+            greet
+            ,scan_mod::start_scan // Register the start_scan command
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
