@@ -11,6 +11,7 @@ const mainStyle: React.CSSProperties = {
 };
 const titleStyle: React.CSSProperties = {
   height: "20vh",
+  lineHeight: "80px",
   fontSize: "64px",
   color: "#7dbcea",
   display: "flex",
@@ -18,6 +19,11 @@ const titleStyle: React.CSSProperties = {
   alignItems: "center",
 };
 
+const searchStyle: React.CSSProperties = {
+  width: "80%",
+  marginLeft: "10%",
+  marginRight: "10%",
+};
 function Main() {
   const [searchStatus, SetSearchStatus] = useState<boolean>(false);
 
@@ -29,6 +35,7 @@ function Main() {
     <div style={mainStyle}>
       <div style={titleStyle}>Welcome to SVT!</div>
       <Search
+        style={searchStyle}
         placeholder="..."
         enterButton="查询"
         size="large"
