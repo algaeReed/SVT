@@ -1,35 +1,77 @@
-import { KeyboardEvent, useState } from "react";
-import { invoke } from "@tauri-apps/api/tauri";
-import "./App.scss";
-import { Button, Input } from 'antd';
-const { Search } = Input;
+import { Layout } from "antd";
+import { Header, Content, Footer } from "antd/es/layout/layout";
+import Sider from "antd/es/layout/Sider";
+import Menu from "./layout/menu/Menu";
+import Main from "./layout/main/Main";
+import { useState } from "react";
 
+const appStyle: React.CSSProperties = {
+  backgroundColor: "#d4d9dd",
+  background: "red",
+};
+
+const headerStyle: React.CSSProperties = {
+  textAlign: "center",
+  color: "#fff",
+  height: 64,
+  paddingInline: 50,
+  lineHeight: "64px",
+  backgroundColor: "#ffffff",
+  border: "1px solid red",
+};
+
+const siderStyle: React.CSSProperties = {
+  height: "calc(100vh - 50px)",
+  color: "#fff",
+  backgroundColor: "#ffffff",
+  border: "1px solid red",
+};
+
+const contentStyle: React.CSSProperties = {
+  height: "calc(100vh - 50px)",
+  color: "#fff",
+  backgroundColor: "#ffffff",
+};
+
+//通过设置header的高度，来设置footer的高度
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
+  const [notification, SetNotification] = useState<boolean>(false);
 
-  const [searchStatus,SetSearchStatus] = useState<boolean>(false)
-
-  async function greet() {
-    setGreetMsg(await invoke("greet", { name }));
-  }
-
-
-  const handleSearch  =async (e: any) => { 
-    console.log(e)
-    await invoke("start_scan");
-  }
   return (
-    <div className="container">
-      <h1>Welcome to SVT!</h1>
-      
-      <div className="search">
-        {/* enter domain or ip... */}
-        <Search placeholder="..." enterButton="查询" size="large" loading={searchStatus} onSearch={(e) => { handleSearch(e)}}  />
-        
-    </div>
-
+    <div style={appStyle}>
+      <Layout>
+        {notification && <Header style={headerStyle}>Header</Header>}
+        <Layout hasSider>
+          <Sider
+            collapsible={true}
+            style={
+              notification
+                ? siderStyle
+                : {
+                    ...siderStyle,
+                    height: "100vh",
+                  }
+            }
+            width={300}
+          >
+            <Menu />
+          </Sider>
+          <Content
+            style={
+              notification
+                ? contentStyle
+                : {
+                    ...contentStyle,
+                    height: "100vh",
+                  }
+            }
+          >
+            <Main />
+            {/* {notification} */}
+          </Content>
+        </Layout>
+      </Layout>
     </div>
   );
 }
