@@ -25,7 +25,7 @@ const searchStyle: React.CSSProperties = {
   marginRight: "10%",
 };
 function Main() {
-  const [searchStatus, SetSearchStatus] = useState<boolean>(false);
+  const [searchStatus, _SetSearchStatus] = useState<boolean>(false);
 
   const handleSearch = async (e: any) => {
     console.log(e);

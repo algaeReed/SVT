@@ -1,5 +1,5 @@
 import { Layout } from "antd";
-import { Header, Content, Footer } from "antd/es/layout/layout";
+import { Header, Content } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import Menu from "./layout/menu/Menu";
 import Main from "./layout/main/Main";
@@ -36,7 +36,7 @@ const contentStyle: React.CSSProperties = {
 //通过设置header的高度，来设置footer的高度
 
 function App() {
-  const [notification, SetNotification] = useState<boolean>(false);
+  const [notification, _SetNotification] = useState<boolean>(false);
 
   return (
     <div style={appStyle}>

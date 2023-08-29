@@ -1,7 +1,3 @@
-import { Layout } from "antd";
-import { Header, Content, Footer } from "antd/es/layout/layout";
-import Sider from "antd/es/layout/Sider";
-
 const SearchResultStyle: React.CSSProperties = {
   color: "black",
 };
