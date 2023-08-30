@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
 import Search from "antd/es/input/Search";
-import SearchResult from "../../components/SearchResult/SearchResult";
+import SearchResult from "../../views/SearchResult/Index";
 
 const mainStyle: React.CSSProperties = {
   width: "90%",
