@@ -70,7 +70,6 @@ const App: React.FC = ({}) => {
                   }
             }
           >
-            22
             <Outlet />
             {/* <Main /> */}
             {/* {notification} */}
