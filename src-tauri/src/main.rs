@@ -3,7 +3,7 @@ use tauri::Manager;
 
 
 mod model {
-    pub mod log_mod;
+    pub mod log_mod; 
     pub mod scan_mod; // 导入 scan_mod 模块
 
 }

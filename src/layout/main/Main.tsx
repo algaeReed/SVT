@@ -24,7 +24,7 @@ const searchStyle: React.CSSProperties = {
   marginLeft: "10%",
   marginRight: "10%",
 };
-function Main() {
+const Main: React.FC = ({}) => {
   const [searchStatus, _SetSearchStatus] = useState<boolean>(false);
   //定义c段 使用usestate
   const [c_segment, SetCSegment] = useState<[]>([]);
@@ -54,6 +54,6 @@ function Main() {
       <SearchResult cSegment={c_segment} />
     </div>
   );
-}
+};
 
 export default Main;

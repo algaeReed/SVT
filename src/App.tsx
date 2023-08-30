@@ -31,11 +31,12 @@ const contentStyle: React.CSSProperties = {
   height: "calc(100vh - 50px)",
   color: "#fff",
   backgroundColor: "#ffffff",
+  overflow: "hidden",
 };
 
 //通过设置header的高度，来设置footer的高度
 
-function App() {
+const App: React.FC = ({}) => {
   const [notification, _SetNotification] = useState<boolean>(false);
 
   return (
@@ -74,6 +75,6 @@ function App() {
       </Layout>
     </div>
   );
-}
+};
 
 export default App;
