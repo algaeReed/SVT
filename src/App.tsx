@@ -9,7 +9,6 @@ import { Link, Outlet } from "react-router-dom";
 
 const appStyle: React.CSSProperties = {
   backgroundColor: "#d4d9dd",
-  background: "red",
 };
 
 const headerStyle: React.CSSProperties = {
@@ -19,14 +18,12 @@ const headerStyle: React.CSSProperties = {
   paddingInline: 50,
   lineHeight: "64px",
   backgroundColor: "#ffffff",
-  border: "1px solid red",
 };
 
 const siderStyle: React.CSSProperties = {
   height: "calc(100vh - 50px)",
   color: "#fff",
   backgroundColor: "#ffffff",
-  border: "1px solid red",
 };
 
 const contentStyle: React.CSSProperties = {

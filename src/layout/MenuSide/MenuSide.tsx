@@ -1,19 +1,17 @@
 import type { MenuProps } from "antd";
-import { Menu } from "antd";
+import { Menu, Image } from "antd";
 
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
-  SecurityScanOutlined,
-} from "@ant-design/icons";
+import { SettingOutlined, SecurityScanOutlined } from "@ant-design/icons";
 import Router from "../../routes";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 type MenuItem = Required<MenuProps>["items"][number];
-
+import logo from "../../assets/logo.jpg";
 const MenuSide: React.FC = ({}) => {
-  const [current, setCurrent] = useState("mail");
+  const menuSideStyle: React.CSSProperties = {
+    // border: "1px solid red",
+  };
+  const [current, setCurrent] = useState("/");
 
   const navigate = useNavigate();
 
@@ -39,11 +37,20 @@ const MenuSide: React.FC = ({}) => {
   const onClick: MenuProps["onClick"] = (e) => {
     console.log("click", e);
     navigate(e.keyPath[0]);
+    setCurrent(e.key);
   };
 
   return (
-    <div className="menu">
-      {/* <Image width={200} /> */}
+    <div style={menuSideStyle}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          margin: "10px auto",
+        }}
+      >
+        <Image width={76} src={logo} preview={false} />
+      </div>
       <Menu
         selectedKeys={[current]}
         onSelect={onClick}
