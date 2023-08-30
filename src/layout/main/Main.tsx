@@ -26,10 +26,17 @@ const searchStyle: React.CSSProperties = {
 };
 function Main() {
   const [searchStatus, _SetSearchStatus] = useState<boolean>(false);
+  //定义c段 使用usestate
+  const [c_segment, SetCSegment] = useState<[]>([]);
 
   const handleSearch = async (e: any) => {
     console.log(e);
-    await invoke("start_scan");
+    //定义C段
+    const c_segment_ret: [] = await invoke("start_scan", {
+      target: "220.181.172.99",
+    });
+    SetCSegment(c_segment_ret);
+    console.log(c_segment_ret);
   };
   return (
     <div style={mainStyle}>
@@ -44,7 +51,7 @@ function Main() {
           handleSearch(e);
         }}
       />
-      <SearchResult />
+      <SearchResult cSegment={c_segment} />
     </div>
   );
 }
