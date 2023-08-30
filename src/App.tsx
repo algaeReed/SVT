@@ -2,10 +2,9 @@ import { Layout } from "antd";
 import { Header, Content } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import Menu from "./layout/MenuSide/MenuSide";
-import Main from "./layout/Main/Main";
 import { useState } from "react";
 
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const appStyle: React.CSSProperties = {
   backgroundColor: "#d4d9dd",

@@ -2,8 +2,7 @@ import type { MenuProps } from "antd";
 import { Menu, Image } from "antd";
 
 import { SettingOutlined, SecurityScanOutlined } from "@ant-design/icons";
-import Router from "../../routes";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 type MenuItem = Required<MenuProps>["items"][number];
 import logo from "../../assets/logo.jpg";
